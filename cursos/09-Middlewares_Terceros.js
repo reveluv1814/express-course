@@ -3,6 +3,7 @@ const morgan = require('morgan')
 
 const app = express();
 
+//morgan es un middleware de terceros
 app.use(morgan('dev'))
 
 app.get('/dashboard', (req,res)=>{

@@ -15,3 +15,13 @@ Funcionan como un documento que no se ve.
 - **Body:** Aqui viene el contenido, el objeto jdon ppor ejemplo.
 
 Todo esto es un vistazo general ya que se puede desglozar más cosas en el archivo imaginario
+
+### Middlewares
+
+Son funciones entre el navegador y el servidor con un endpoint.
+
+Estas funciones ayudan a controlar o ejecutan algo para despues mandarlas a una cierta ruta, por ejemplo para autorizar a una persona entrar a una ruta, primero entraria al middleware y ahi este validaria el usuario si es correcto lo manda a la ruta si no le manda un mensaje de error.
+
+Este tiene los comunes parámetros *req y res*, pero también el **next** que pasa a la ruta que le sigue y no se estanca en esa función.
+
+Se puede usar middlewares de terceros así nos facilitaría hacer consultas por ejemplo validar datos o mostrar imagenes, etc.
