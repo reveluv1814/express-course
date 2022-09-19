@@ -25,3 +25,7 @@ Estas funciones ayudan a controlar o ejecutan algo para despues mandarlas a una 
 Este tiene los comunes parámetros *req y res*, pero también el **next** que pasa a la ruta que le sigue y no se estanca en esa función.
 
 Se puede usar middlewares de terceros así nos facilitaría hacer consultas por ejemplo validar datos o mostrar imagenes, etc.
+
+### REST API
+
+Un **_REST API_** es un servidor que tiene ciertas urls y que nos van a permitir procesar datos
