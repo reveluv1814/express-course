@@ -29,3 +29,58 @@ Se puede usar middlewares de terceros así nos facilitaría hacer consultas por 
 ### REST API
 
 Un **_REST API_** es un servidor que tiene ciertas urls y que nos van a permitir procesar datos
+
+### EXPRESS SETTINGS
+
+Son varibles de configuración para el uso en la aplicación. Estas deben estar antes de los middlewares.
+
+```javascript
+//se crea la variable
+//app.set(nombreVariable , Valor variable)
+app.set('appName', 'Expres Course')
+
+//obtiene el valor de la variable
+
+app.get('appName')
+
+//configuracion reservada por express
+app.set('case sensitive routing',true)
+//sirve para que respete el nombre de la ruta si tiene mayuscula o no 
+```
+
+### EXPRESS ROUTER
+
+Nos ayuda a importar y exportar rutas
+
+```javascript
+.....
+
+//archivo principal imortamos
+
+//importamos las rutas
+const HomeRoutes = require("./routes/home");
+const UserRoutes = require("./routes/users");
+
+//routes importadas
+app.use(HomeRoutes)
+app.use(UserRoutes)
+```
+Archivo de Ruta;
+```javascript
+//archivo a exportar donde esta la ruta
+
+//usamos un modulo de express para exportar rutas este es "Router"
+const {Router} = require('express')
+
+const router = Router()
+
+//rutas
+router.all("/about", (req, res) => {
+  res.send("about page");
+});
+....
+///...
+
+//se exporta
+module.exports = router
+```
