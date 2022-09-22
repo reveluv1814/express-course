@@ -3,12 +3,18 @@ const express = require('express')
 
 const router = express.Router()
 
-router.all("/about", (req, res) => {
-  res.send("about page");
+router.get("/", (req, res) => {
+  res.render('index', {
+    title: 'Pagina inicio Express y EJS'
+  });
+});
+
+router.get("/about", (req, res) => {
+  res.render('about');
 });
 
 router.get("/dashboard", (req, res) => {
-  res.sendFile("Dashboard page");
+  res.render('dashboard');
 });
 
 //se exporta

@@ -84,3 +84,43 @@ router.all("/about", (req, res) => {
 //se exporta
 module.exports = router
 ```
+
+### NODEMON
+
+Server live
+
+`npm i nodemon -D`
+
+Y se configura en el package.json
+```javascript
+{
+  "scripts":{
+    "dev": "nodemon src/index.js....(ruta del index principal)"
+  },
+}
+```
+
+### MODULO EJS
+
+Es un motor de plantillas y permite tener un html con sintaxis que interactue con el servidor, implementando logica de javascript.
+
+```javascript
+//instalamos ejs
+npm i ejs
+// en el archivo principal importamos
+require('ejs')
+```
+- Se crea la carpeta views dentro de src
+- Despues dentro de este creamos archivos .ejs y este contiene codigo html
+- Y express gana una nueva funcion llamada render(), para eso configuramos express con la ayuda de path y haciendo que admita el motor de platillas, en el archivo principal del servidor:
+```javascript
+//configura el motor de vistas en ejs
+app.set('view engine', 'ejs')
+
+app.set('views', path.join(__dirname,'views'))
+//la variable views con el valor de la ruta concatenada con el nombre de la carpeta
+``` 
+- La carpeta **partials** dentro de views contiene porciones de codigo HTML que se reutilizan muchas veces.
+- Se usa la siguiente sintaxis para incluir archivos de los partials.
+`<%- include('partials/header'); %>`
+
