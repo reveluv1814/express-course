@@ -124,3 +124,23 @@ app.set('views', path.join(__dirname,'views'))
 - Se usa la siguiente sintaxis para incluir archivos de los partials.
 `<%- include('partials/header'); %>`
 
+### MODULO AXIOS
+
+Me permite consultar apis externas como el **_fetch_** en node.
+`npm i axios`
+Se debe importar en la ruta: 
+`const axios = require("axios");`
+Despues usarlo para hacer el petición, para esto si se debe usar funciones asincronas:
+(ejemplo de la utilización)
+```javascript
+router.get("/posts", async (req, res) => {
+  const response = await axios.get(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+  console.log(response.data);
+
+  res.render("posts", {
+    posts: response.data,
+  });
+});
+```
